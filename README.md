@@ -52,7 +52,7 @@ Advanced IP Tracer is a powerful network scanning and IP tracking tool designed 
   git clone --depth=1 https://github.com/TPG2244/ADVANCE-IP-TRACER
   ```
 
-- Now go to cloned directory and run 
+- Now go to cloned directory and run -
   ```
   $ cd ADVANCE-IP-TRACER
   $ python RK-IP-TRACER
