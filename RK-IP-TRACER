@@ -1,58 +1,93 @@
 import requests
+import ipaddress
 import json
 
-def main():
+def display_banner():
+    """Display the tool's banner and author information."""
     print("===============================")
-    print("        ADVANCE IP-TRACER       ")
-    print("       AUTHOR: RONAK (ARPAN)    ")
+    print("        ADVANCE IP-TRACER      ")
+    print("       AUTHOR: RONAK (ARPAN)   ")
     print("===============================")
     print("      ONLY FOR EDUCATIONAL PURPOSE")
     print("===============================\n")
 
-    # Attempt to get user input or use a fallback in restricted environments
-    ip_address = "8.8.8.8"  # Default fallback IP address
-    try:
-        ip_address = input("Enter the IP address (IPv4 or IPv6): ").strip()
-        if not ip_address:
-            print("No IP address provided. Using default IP address.")
-    except OSError:
-        print("Input operation is not supported in this environment. Using default IP address.")
 
-    print(f"Using IP address: {ip_address}\n")
-    print("Fetching details, please wait...\n")
-
-    # API call for IP data
+def validate_ip(ip):
+    """Validate the given IP address."""
     try:
-        response = requests.get(f"https://ipapi.co/{ip_address}/json/")
+        ipaddress.ip_address(ip)
+        return True
+    except ValueError:
+        return False
+
+
+def fetch_ip_details(ip):
+    """Fetch IP details from the API."""
+    try:
+        print(f"Fetching details for IP: {ip}...\n")
+        response = requests.get(f"https://ipapi.co/{ip}/json/")
         if response.status_code == 200:
             ip_data = response.json()
-
-            # Check if the response contains an error
             if 'error' in ip_data:
-                print("Error fetching IP details: ", ip_data.get('reason', 'Unknown error'))
-            else:
-                print("===============================")
-                print("         IP DETAILS             ")
-                print("===============================")
-                print(f"IP Address: {ip_data.get('ip', 'N/A')}")
-                print(f"City: {ip_data.get('city', 'N/A')}")
-                print(f"Region: {ip_data.get('region', 'N/A')}")
-                print(f"Country: {ip_data.get('country_name', 'N/A')} ({ip_data.get('country_code', 'N/A')})")
-                print(f"Postal Code: {ip_data.get('postal', 'N/A')}")
-                print(f"Latitude: {ip_data.get('latitude', 'N/A')}")
-                print(f"Longitude: {ip_data.get('longitude', 'N/A')}")
-                print(f"Timezone: {ip_data.get('timezone', 'N/A')}")
-                print(f"ASN: {ip_data.get('asn', 'N/A')}")
-                print(f"Organization: {ip_data.get('org', 'N/A')}")
-                print(f"ISP: {ip_data.get('isp', 'N/A')}")
-                print("===============================\n")
+                raise ValueError(f"API Error: {ip_data.get('reason', 'Unknown error')}")
+            return ip_data
         else:
-            print(f"Failed to fetch IP details. HTTP Error Code: {response.status_code}")
+            raise ConnectionError(f"HTTP Error {response.status_code}")
     except requests.exceptions.RequestException as e:
-        print("An error occurred while fetching the IP details:", str(e))
+        raise ConnectionError(f"Network error: {e}")
+
+
+def display_ip_details(ip_data):
+    """Display the IP details in a structured format."""
+    print("===============================")
+    print("         IP DETAILS            ")
+    print("===============================")
+    print(f"IP Address: {ip_data.get('ip', 'N/A')}")
+    print(f"City: {ip_data.get('city', 'N/A')}")
+    print(f"Region: {ip_data.get('region', 'N/A')}")
+    print(f"Country: {ip_data.get('country_name', 'N/A')} ({ip_data.get('country_code', 'N/A')})")
+    print(f"Postal Code: {ip_data.get('postal', 'N/A')}")
+    print(f"Latitude: {ip_data.get('latitude', 'N/A')}")
+    print(f"Longitude: {ip_data.get('longitude', 'N/A')}")
+    print(f"Timezone: {ip_data.get('timezone', 'N/A')}")
+    print(f"ASN: {ip_data.get('asn', 'N/A')}")
+    print(f"Organization: {ip_data.get('org', 'N/A')}")
+    print(f"ISP: {ip_data.get('isp', 'N/A')}")
+    print("===============================\n")
+
+
+def main():
+    display_banner()
+
+    # Default IP fallback
+    default_ip = "8.8.8.8"
+    ip_address = default_ip
+
+    try:
+        user_input = input("Enter the IP address (IPv4 or IPv6): ").strip()
+        if user_input:
+            if validate_ip(user_input):
+                ip_address = user_input
+            else:
+                print("Invalid IP address entered. Using default IP address.")
+        else:
+            print("No IP address provided. Using default IP address.")
+    except OSError:
+        print("Input operation not supported in this environment. Using default IP address.")
+
+    try:
+        ip_data = fetch_ip_details(ip_address)
+        display_ip_details(ip_data)
+    except ValueError as ve:
+        print(f"Error: {ve}")
+    except ConnectionError as ce:
+        print(f"Error: {ce}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
 
     print("\nTool execution completed.")
     print("AUTHOR: RONAK (ARPAN)")
+
 
 if __name__ == "__main__":
     main()
