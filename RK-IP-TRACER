@@ -7,7 +7,7 @@ def display_banner():
     """Display the tool's banner and author information."""
     print("===============================")
     print("        ADVANCE IP-TRACER      ")
-    print("       AUTHOR: RONAK (ARPAN)   ")
+    print("       AUTHOR: AKHIL   ")
     print("===============================")
     print("      ONLY FOR EDUCATIONAL PURPOSE")
     print("===============================\n")
@@ -93,7 +93,7 @@ def main():
         print(f"An unexpected error occurred: {e}")
 
     print("\nTool execution completed.")
-    print("AUTHOR: RONAK (ARPAN)")
+    print("AUTHOR: AKHIL )")
 
 
 if __name__ == "__main__":
