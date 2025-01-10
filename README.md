@@ -4,7 +4,7 @@
 **Introduction**
 Advanced IP Tracer is a powerful network scanning and IP tracking tool designed to provide detailed insights into the network infrastructure, devices, and the associated IP addresses. It helps network administrators and IT professionals in tracking and analyzing IP addresses within a network, discovering devices, and ensuring smooth operation of network systems. By efficiently scanning a network, Advanced IP Tracer provides an intuitive interface to monitor active devices, identify potential vulnerabilities, and maintain the network's integrity.
 
-**Key Features of Advanced IP Tracer**
+**Key Features of Advanced IP Tracer**(somw features add in future)
 1. **IP Range Scanning:** 
    Advanced IP Tracer allows users to scan a specified range of IP addresses within a local network. It identifies all active IPs, providing detailed information such as the device name, IP address, MAC address, and manufacturer.
 
