@@ -45,9 +45,18 @@ Advanced IP Tracer is a powerful network scanning and IP tracking tool designed 
 - **Security Enhancement:** Detects unauthorized devices, potentially malicious IP addresses, and network intrusions.
 - **User-Friendly Interface:** Its intuitive and easy-to-navigate interface makes it accessible for both experienced network professionals and beginners.
 
-INSTALLATION
-$ cd ADVANCE-IP-TRACER
-$ python RK-IP-TRACER
+### Installation
+
+- Just, Clone this repository -
+  ```
+  git clone --depth=1 https://github.com/TPG2244/ADVANCE-IP-TRACER
+  ```
+
+- Now go to cloned directory and run 
+  ```
+  $ cd ADVANCE-IP-TRACER
+  $ python RK-IP-TRACER
+  ```
 
 **Conclusion**
 Advanced IP Tracer is an essential tool for network administrators looking to improve their network management, security, and troubleshooting capabilities. With its powerful features like IP scanning, device detection, and performance monitoring, it offers significant benefits in maintaining a healthy and secure network environment. Whether you're managing a small home network or a large corporate system, Advanced IP Tracer is a valuable resource for ensuring efficient and effective network operations.
