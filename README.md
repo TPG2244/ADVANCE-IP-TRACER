@@ -113,7 +113,7 @@ Happy Tracing!
 
 - Just, Clone this repository -
   ```
-  git clone --depth=1 https://github.com/TPG2244/ADVANCE-IP-TRACER
+  git clone https://github.com/TPG2244/ADVANCE-IP-TRACER
   ```
 
 - Now go to cloned directory and run -
