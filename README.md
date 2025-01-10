@@ -34,7 +34,7 @@ pip install requests
 
 1. Clone the repository from GitHub:
    ```bash
-   git clone https://github.com/your-username/Advance-IP-Tracer.git
+   git clone https://github.com/TPG2244/ADVANCE-IP-TRACER
    ```
 
 2. Navigate to the tool directory:
@@ -42,10 +42,6 @@ pip install requests
    cd Advance-IP-Tracer
    ```
 
-3. Make the script executable (if needed):
-   ```bash
-   chmod +x ip_tracker_tool.py
-   ```
 
 ---
 
@@ -53,7 +49,7 @@ pip install requests
 
 1. Run the script:
    ```bash
-   python3 ip_tracker_tool.py
+   python3 RK-IP-TRACER
    ```
 
 2. Enter the desired IP address (IPv4 or IPv6) when prompted. If no input is provided, the tool will default to tracing `8.8.8.8`.
@@ -113,7 +109,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for more 
 Happy Tracing!
 
 
-### Installation
+### Installation (METHOD 2ND)
 
 - Just, Clone this repository -
   ```
