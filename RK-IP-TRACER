@@ -1,6 +1,7 @@
 import requests
 import ipaddress
 import json
+import time
 
 def display_banner():
     """Display the tool's banner and author information."""
@@ -25,14 +26,20 @@ def fetch_ip_details(ip):
     """Fetch IP details from the API."""
     try:
         print(f"Fetching details for IP: {ip}...\n")
-        response = requests.get(f"https://ipapi.co/{ip}/json/")
-        if response.status_code == 200:
-            ip_data = response.json()
-            if 'error' in ip_data:
-                raise ValueError(f"API Error: {ip_data.get('reason', 'Unknown error')}")
-            return ip_data
-        else:
-            raise ConnectionError(f"HTTP Error {response.status_code}")
+        max_retries = 3
+        for attempt in range(max_retries):
+            response = requests.get(f"https://ipapi.co/{ip}/json/")
+            if response.status_code == 200:
+                ip_data = response.json()
+                if 'error' in ip_data:
+                    raise ValueError(f"API Error: {ip_data.get('reason', 'Unknown error')}")
+                return ip_data
+            elif response.status_code == 429:
+                print("Rate limit exceeded. Retrying after a delay...")
+                time.sleep(5)  # Delay for 5 seconds before retrying
+            else:
+                raise ConnectionError(f"HTTP Error {response.status_code}")
+        raise ConnectionError("Exceeded maximum retries due to rate limiting.")
     except requests.exceptions.RequestException as e:
         raise ConnectionError(f"Network error: {e}")
 
