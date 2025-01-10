@@ -1,49 +1,99 @@
-# ADVANCE-IP-TRACER
-**Advanced IP Tracer Tool: An Overview**
+# Advance IP Tracer
 
-**Introduction**
-Advanced IP Tracer is a powerful network scanning and IP tracking tool designed to provide detailed insights into the network infrastructure, devices, and the associated IP addresses. It helps network administrators and IT professionals in tracking and analyzing IP addresses within a network, discovering devices, and ensuring smooth operation of network systems. By efficiently scanning a network, Advanced IP Tracer provides an intuitive interface to monitor active devices, identify potential vulnerabilities, and maintain the network's integrity.
+## Description
+Advance IP Tracer is a Python-based tool designed to fetch detailed information about an IP address, supporting both IPv4 and IPv6. The tool uses the `ipapi` API to provide details such as location, ISP, timezone, and more. It is intended for educational purposes only.
 
-**Key Features of Advanced IP Tracer**(some features add in future)
-1. **IP Range Scanning:** 
-   Advanced IP Tracer allows users to scan a specified range of IP addresses within a local network. It identifies all active IPs, providing detailed information such as the device name, IP address, MAC address, and manufacturer.
+---
 
-2. **Device Detection:** 
-   The tool identifies and classifies network devices including routers, switches, computers, printers, and other connected devices. This allows network administrators to map the network and understand the flow of data between different devices.
+## Features
+- Fetches IP details such as city, region, country, and postal code.
+- Displays latitude, longitude, and timezone of the IP address.
+- Provides ISP, ASN, and organization information.
+- Supports both IPv4 and IPv6.
+- Handles interactive and non-interactive environments with a fallback IP option.
 
-3. **Detailed Device Information:** 
-   For each detected device, Advanced IP Tracer provides crucial details, such as the hostname, device type, IP address, MAC address, and manufacturer details. This information is vital for inventory management and troubleshooting.
+---
 
-4. **Ping and Trace Route:** 
-   The tool includes the ability to ping devices or trace routes between network points to measure response times and diagnose network issues.
+## Author
+**Ronak (Arpan)**
 
-5. **Subnet Detection:** 
-   Advanced IP Tracer can automatically detect subnets and give users the ability to analyze the range of IP addresses that belong to a specific network. This helps in understanding network segmentation and resource allocation.
+---
 
-6. **Exporting Results:** 
-   Users can export the results of the scan in various formats such as CSV, Excel, or XML. This feature allows network administrators to maintain logs, generate reports, and share the findings with other team members.
+## Prerequisites
+Ensure the following are installed on your system:
+- Python 3.6 or higher
+- `requests` library
 
-7. **Customizable Alerts:** 
-   Advanced IP Tracer allows users to set custom alerts for when certain devices go offline or when specific IP ranges are being accessed, ensuring proactive network monitoring and minimizing downtime.
+You can install the required library using:
+```bash
+pip install requests
+```
 
-**Use Cases for Advanced IP Tracer**
-1. **Network Troubleshooting:** 
-   When network issues arise, Advanced IP Tracer helps identify which devices are affected and provides insights into network performance by tracking IPs, response times, and device statuses.
+---
 
-2. **Security Audits:** 
-   By identifying unauthorized devices and unknown IP addresses on a network, Advanced IP Tracer can assist in network security audits. The tool can also help detect potential vulnerabilities or weak spots in the network.
+## Usage
+1. Clone or download the repository.
+2. Run the tool using:
+   ```bash
+   python ip_tracker_tool.py
+   ```
+3. Enter the IP address (IPv4 or IPv6) when prompted. If input is not supported, the tool will default to `8.8.8.8`.
 
-3. **Inventory Management:** 
-   The detailed device detection features make it easy to manage a network’s inventory. Administrators can maintain a record of all devices connected to the network, including their types, IP addresses, and manufacturers.
+---
 
-4. **Network Optimization:** 
-   By monitoring the devices and their IP addresses, administrators can better optimize the network, ensuring resources are used efficiently and devices are properly configured.
+## Example Output
+```
+===============================
+        ADVANCE IP-TRACER       
+       AUTHOR: RONAK (ARPAN)    
+===============================
+      ONLY FOR EDUCATIONAL PURPOSE
+===============================
 
-**Benefits**
-- **Improved Network Visibility:** Provides network administrators with a clearer view of the entire network infrastructure.
-- **Enhanced Troubleshooting Capabilities:** Quickly identifies network issues, device failures, and performance bottlenecks.
-- **Security Enhancement:** Detects unauthorized devices, potentially malicious IP addresses, and network intrusions.
-- **User-Friendly Interface:** Its intuitive and easy-to-navigate interface makes it accessible for both experienced network professionals and beginners.
+Enter the IP address (IPv4 or IPv6): 8.8.8.8
+Using IP address: 8.8.8.8
+
+Fetching details, please wait...
+
+===============================
+         IP DETAILS             
+===============================
+IP Address: 8.8.8.8
+City: Mountain View
+Region: California
+Country: United States (US)
+Postal Code: 94035
+Latitude: 37.386
+Longitude: -122.0838
+Timezone: America/Los_Angeles
+ASN: 15169
+Organization: Google LLC
+ISP: Google LLC
+===============================
+
+Tool execution completed.
+AUTHOR: RONAK (ARPAN)
+```
+
+---
+
+## API
+This tool uses the `ipapi.co` API. For more information, visit the [IPAPI documentation](https://ipapi.co/).
+
+---
+
+## License
+This project is for **educational purposes only** and should not be used for malicious activities.
+
+---
+
+## Contribution
+Feel free to fork the repository and create pull requests for improvements or additional features.
+
+---
+
+## Disclaimer
+The author is not responsible for any misuse of this tool. Always ensure compliance with local laws and regulations when using this software.
 
 ### Installation
 
