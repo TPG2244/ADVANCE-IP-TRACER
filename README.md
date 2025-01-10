@@ -1,8 +1,11 @@
 # Advance IP Tracer
 
-**Author**: Ronak (Arpan)
+**Author**: Ronak (Arpan) 
+
 **STUDENT**: Kendriya Vidyalay Sangathan 2 NSB 
+
 **AGE**:16+
+
 **Purpose**: Only for Educational Use  
 
 Advance IP Tracer is a Python-based tool designed for tracing details about an IP address (IPv4 or IPv6). This tool provides information such as location, ISP, organization, timezone, and more. It is a simple yet powerful utility for networking and educational purposes.
