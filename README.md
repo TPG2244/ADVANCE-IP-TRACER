@@ -1,6 +1,6 @@
 # Advance IP Tracer
 
-**Author**: Ronak (Arpan) 
+**Author**: AKHIL
 
 **STUDENT**: Kendriya Vidyalay Sangathan 2 NSB 
 
