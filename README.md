@@ -1,47 +1,64 @@
 # Advance IP Tracer
 
-## Description
-Advance IP Tracer is a Python-based tool designed to fetch detailed information about an IP address, supporting both IPv4 and IPv6. The tool uses the `ipapi` API to provide details such as location, ISP, timezone, and more. It is intended for educational purposes only.
+**Author**: Ronak (Arpan)  
+**Purpose**: Only for Educational Use  
+
+Advance IP Tracer is a Python-based tool designed for tracing details about an IP address (IPv4 or IPv6). This tool provides information such as location, ISP, organization, timezone, and more. It is a simple yet powerful utility for networking and educational purposes.
 
 ---
 
 ## Features
-- Fetches IP details such as city, region, country, and postal code.
-- Displays latitude, longitude, and timezone of the IP address.
-- Provides ISP, ASN, and organization information.
 - Supports both IPv4 and IPv6.
-- Handles interactive and non-interactive environments with a fallback IP option.
+- Fetches geographical and organizational details of an IP address.
+- Provides fallback to a default IP address (8.8.8.8) in non-interactive environments.
+- Lightweight and easy to use.
 
 ---
 
-## Author
-**Ronak (Arpan)**
+## Requirements
 
----
+To use this tool on Kali Linux, ensure the following prerequisites are met:
 
-## Prerequisites
-Ensure the following are installed on your system:
 - Python 3.6 or higher
-- `requests` library
+- Internet connection (required to fetch IP details via API)
+- `requests` library for Python
 
-You can install the required library using:
+You can install the `requests` library with the following command:
 ```bash
 pip install requests
 ```
 
 ---
 
-## Usage
-1. Clone or download the repository.
-2. Run the tool using:
+## Installation
+
+1. Clone the repository from GitHub:
    ```bash
-   python ip_tracker_tool.py
+   git clone https://github.com/your-username/Advance-IP-Tracer.git
    ```
-3. Enter the IP address (IPv4 or IPv6) when prompted. If input is not supported, the tool will default to `8.8.8.8`.
+
+2. Navigate to the tool directory:
+   ```bash
+   cd Advance-IP-Tracer
+   ```
+
+3. Make the script executable (if needed):
+   ```bash
+   chmod +x ip_tracker_tool.py
+   ```
 
 ---
 
-## Example Output
+## Usage
+
+1. Run the script:
+   ```bash
+   python3 ip_tracker_tool.py
+   ```
+
+2. Enter the desired IP address (IPv4 or IPv6) when prompted. If no input is provided, the tool will default to tracing `8.8.8.8`.
+
+Example output:
 ```
 ===============================
         ADVANCE IP-TRACER       
@@ -52,7 +69,6 @@ pip install requests
 
 Enter the IP address (IPv4 or IPv6): 8.8.8.8
 Using IP address: 8.8.8.8
-
 Fetching details, please wait...
 
 ===============================
@@ -62,9 +78,9 @@ IP Address: 8.8.8.8
 City: Mountain View
 Region: California
 Country: United States (US)
-Postal Code: 94035
-Latitude: 37.386
-Longitude: -122.0838
+Postal Code: 94043
+Latitude: 37.4056
+Longitude: -122.0775
 Timezone: America/Los_Angeles
 ASN: 15169
 Organization: Google LLC
@@ -77,23 +93,25 @@ AUTHOR: RONAK (ARPAN)
 
 ---
 
-## API
-This tool uses the `ipapi.co` API. For more information, visit the [IPAPI documentation](https://ipapi.co/).
-
----
-
-## License
-This project is for **educational purposes only** and should not be used for malicious activities.
-
----
-
-## Contribution
-Feel free to fork the repository and create pull requests for improvements or additional features.
+## Notes
+- Ensure you have an active internet connection to use the API service.
+- The tool uses the [ipapi.co](https://ipapi.co/) API for fetching IP details.
+- If input operations are restricted in your environment, the tool will automatically use the fallback IP (`8.8.8.8`).
 
 ---
 
 ## Disclaimer
-The author is not responsible for any misuse of this tool. Always ensure compliance with local laws and regulations when using this software.
+This tool is intended for **educational purposes only**. Unauthorized usage of this tool may violate applicable laws and regulations. The author assumes no responsibility for any misuse or damage caused.
+
+---
+
+## License
+This project is licensed under the MIT License. See the `LICENSE` file for more details.
+
+---
+
+Happy Tracing!
+
 
 ### Installation
 
